@@ -57,7 +57,6 @@ class DetectAndWrite:
     @staticmethod
     def detect():
         """Detect Volumes in the system with local attributes"""
-
         with open(config["mounts_path"]) as f:
             mounts = f.readlines()
             run["local_mounts"] = [x.strip().split()[1] for x in mounts if x.split()[2] in config["local_filesystems"]]
